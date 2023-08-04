@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .navlink {
+    display: inline-block;
+    position: relative;
+  }
+  .navlink:hover {
+    color: rgb(224, 32, 2);
+    /* color: #ff4601; */
+  }
+  .navlink::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 10%;
+    background-color: rgb(224, 32, 2);
+    /* background-color: #ff4601; */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .navlink:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .hamburger-menu > div {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: rgb(224, 32, 2);
+    /* background-color: #ff4601; */
+    border-radius: 0.2rem;
+    transition: all 0.5s;
+  }
+  .hamburger-open > div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-open > div:nth-child(1) {
+    transform: rotate(45deg);
+    transform-origin: left;
+  }
+  .hamburger-open > div:nth-child(3) {
+    transform: rotate(-45deg);
+    transform-origin: left;
+  }
+  .clipped-polygon {
+    clip-path: polygon(0 35%, 100% 0, 100% 100%, 0% 100%);
+  }
+  .brand-button {
+    clip-path: polygon(0 0, 100% 0, 94% 100%, 0% 100%);
+    transition: 0.3s ease;
+  }
+  .brand-button > div {
+    clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
+    transition: 0.3s ease;
+  }
+  .brand-button:hover {
+    clip-path: polygon(6% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .brand-button:hover > div {
+    clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .texture-bg {
+    background: rgb(24, 43, 43);
+    background-image: radial-gradient(
+      ellipse farthest-corner at 10px 10px,
+      rgba(22, 39, 39, 0.902),
+      rgba(11, 48, 48, 0.734) 50%,
+      rgb(20, 46, 46) 50%
+    );
+    background-size: 10px 10px;
+  }
+  .clipped-triangle {
+    clip-path: polygon(0 0, 50% 50%, 0 100%);
+  }
+  .parallelogram {
+    transform: skew(-20deg);
+  }
+  .parallelogram > * {
+    transform: skew(20deg);
+  }
+  .nested-parallelogram {
+    transform: skew(0deg);
+  }
+  .nested-parallelogram > * {
+    transform: skew(20deg);
+  }
+}
+
+/* html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #1e1e1e;
+  min-height: 100vh;
+  display: flex;
+  color: rgb(243, 241, 239);
+  justify-content: center;
+  align-items: center;
+} */
+
+/* Contact Component */
+
+.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+}
+
+#contact {
+  width: 50vw;
+}
+@media only screen and (max-width: 800px) {
+  #contact {
+    width: 80vw;
+  }
+}
+/* @media only screen and (max-width: 460px) {
+  #contact {
+    width: 70vw;
+  }
+} */
+
+.heading-ContactUs {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.form-container {
+  font-size: 1.3rem;
+  border-radius: 10px;
+  padding: 25px 50px;
+  box-shadow: 0 54px 55px rgb(78 78 78 / 25%), 0 -12px 30px rgb(78 78 78 / 25%),
+    0 4px 6px rgb(78 78 78 / 25%), 0 12px 13px rgb(78 78 78 / 25%),
+    0 -3px 5px rgb(78 78 78 / 25%);
+  margin: 1.5rem 0 4rem 0;
+  /* border: 1px solid #ff4601; */
+}
+
+.form-container input {
+  font-size: 1.2rem;
+  margin: 10px 0 10px 0px;
+  border-color: rgb(31, 28, 28);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e8f0fe;
+  color: black;
+}
+
+.form-container textarea {
+  margin: 10px 0 10px 0px;
+  padding: 5px;
+  border-color: rgb(31, 28, 28);
+  border-radius: 5px;
+  background-color: #e8f0fe;
+  font-size: 20px;
+  color: black;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-weight: 600;
+}
+
+.name div {
+  display: flex;
+  flex-direction: column;
+}
+
+.block button {
+  padding: 10px;
+  font-size: 20px;
+  width: 30%;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+.block button:hover{
+  background-color: #252525;
+}
+
+@media only screen and (max-width: 640px) {
+  .block button {
+    width: 70%;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Error 404 */
+
+.error-page {
+  background: linear-gradient(to bottom, #000000, #333333, #0d0c0e);
+  /* background: linear-gradient(to right, #6C63FF, #00008B, #008080);
+  background: linear-gradient(to right, #FF8C00, #00008B, #006400); */
+
+  padding: 2rem;
+  padding-top: 15rem;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.error-Heading {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.error-Button {
+  margin: auto;
+}
+
+@media only screen and (max-width: 640px) {
+  .error-Heading {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .error-Heading {
+    font-size: 2.5rem;
+  }
+}
+
